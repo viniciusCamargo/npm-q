@@ -31,8 +31,8 @@ const obj = {
   name: cwd(),
   version: '0.0.1',
   scripts: {
-    start: 'nodemon app.js'
-  },
+    start: 'node app.js'
+  }
  }
 
  module.exports = createFile
