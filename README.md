@@ -1,7 +1,7 @@
 # npm-s
 > aka **npm quick start**
 
-It creates a `app.js` file and a `package.json` with the following properties in the current directory:
+It creates an empty `app.js` file and a `package.json` with the following properties in the current directory:
 ```json
 {
   "name": "current-working-directory",
