@@ -22,8 +22,10 @@ const createFile = (fileName, content) => {
 }
 
 const cwd = () => {
+  const os = require('os').type()
   const cwd = process.cwd()
-  const lastSlashIndex = cwd.lastIndexOf('/') + 1
+
+  const lastSlashIndex = (os === 'Windows_NT') ? cwd.lastIndexOf('\\') + 1 : cwd.lastIndexOf('/') + 1
   return cwd.slice(lastSlashIndex)
 }
 
