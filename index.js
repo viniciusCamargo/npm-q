@@ -1,43 +1,20 @@
-#!/usr/bin/env node
-const fs = require('fs')
+const path = require('path')
+const createFile = require('./src/createFile')
+const createDirectory = require('./src/createDirectory')
 
-const colors = {
-  blue: '\x1b[47m \x1b[34m %s \x1b[0m \x1b[0m',
-  red: '\x1b[47m \x1b[31m %s \x1b[0m \x1b[0m'
-}
+const directoryName = process.argv[2] || ''
 
-const createFile = (fileName, content) => {
-  fs.writeFile(fileName, content, { flag: 'wx' }, (err) => {
-    if (err) {
-      if (err.code === 'EEXIST') {
-        console.error(colors.red,`${fileName} already exists.`)
-        return
-      } else {
-        console.error(colors.red, err)
-      }
-    }
-
-    console.log(colors.blue, `${fileName} created.`)
-  })
-}
-
-const cwd = () => {
-  const os = require('os').type()
-  const cwd = process.cwd()
-
-  const lastSlashIndex = (os === 'Windows_NT') ? cwd.lastIndexOf('\\') + 1 : cwd.lastIndexOf('/') + 1
-  return cwd.slice(lastSlashIndex)
-}
-
-const obj = {
-  name: cwd(),
+const packageJson = {
+  name: directoryName || path.basename(__dirname),
   version: '0.0.1',
   scripts: {
     start: 'node app.js'
   }
- }
+}
 
- module.exports = createFile
-
-createFile('app.js', '')
-createFile('package.json', JSON.stringify(obj, null, '\t'))
+if (directoryName) {
+  createDirectory(directoryName, packageJson)
+} else {
+  createFile('app.js', '')
+  createFile('package.json', packageJson)
+}

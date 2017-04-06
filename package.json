@@ -1,13 +1,13 @@
 {
 	"name": "npm-s",
-	"version": "0.0.1",
+	"version": "1.1.0",
 	"description": "Quickly create a package.json template",
 	"license": "MIT",  
 	"author": "Vinicius Camargo <cmrg.vinicius@gmail.com>",
 	"repository": "viniciusCamargo/npm-s",
 	"bin": {
-    "npm-s": "./index.js",
-    "npm-start": "./index.js"
+		"npm-s": "./index.js",
+		"npm-start": "./index.js"
 	},
 	"engines": {
 	  "node": ">=7.0.0"
