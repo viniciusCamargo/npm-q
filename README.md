@@ -1,4 +1,6 @@
 # npm-s
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/viniciusCamargo/npm-s.svg)](https://greenkeeper.io/)
 > aka **npm quick start**
 
 It creates an empty `app.js` file and a `package.json` with the following properties in the current directory¹:
