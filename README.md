@@ -1,3 +1,7 @@
+# Deprecated :exclamation::no_entry_sign::exclamation::no_entry_sign::exclamation::no_entry_sign::exclamation:
+## This package is no longer maintained
+
+
 # npm-s
 > aka **npm quick start**
 
